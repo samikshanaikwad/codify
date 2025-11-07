@@ -1,5 +1,5 @@
 // Import configuration
-import config from './config.js';
+import config from '../config.js';
 
 // === Configure this ===
 const DEFAULT_WEBHOOK_URL = config.webhookUrl; // optional fallback

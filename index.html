@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codify – Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo-dot"></span>
+      <h1>Codify</h1>
+    </div>
+    <button class="new-chat" id="newChatBtn">+ New chat</button>
+    <nav id="threads" class="threads"></nav>
+    <div class="sidebar-footer">
+      <button id="exportBtn" title="Export chat as JSON">Export</button>
+      <button id="clearAllBtn" title="Delete all chats">Clear</button>
+    </div>
+  </aside>
+
+  <main class="chat">
+    <header class="chat-header">
+      <button id="toggleSidebar" class="icon-btn" aria-label="Toggle sidebar">☰</button>
+      <h2 id="chatTitle">New chat</h2>
+      <div class="spacer"></div>
+    </header>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <section id="messages" class="messages" aria-live="polite"></section>
+
+    <footer class="composer">
+      <form id="composerForm">
+        <div class="input-container">
+          <textarea id="userInput" placeholder="Message Codify… (Shift+Enter = newline)" rows="1"></textarea>
+          <button type="button" id="stopBtn">⏹</button>
+          <button type="submit" id="sendBtn">➤</button>
+        </div>
+      </form>
+    </footer>
+  </main>
+
+  <template id="msgTpl">
+    <article class="msg">
+      <div class="avatar"></div>
+      <div class="bubble">
+        <div class="content"></div>
+        <div class="thinking">Thinking<span class="dots"></span></div>
+        <div class="actions">
+          <button class="copy">📋</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
